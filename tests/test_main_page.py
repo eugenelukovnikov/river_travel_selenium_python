@@ -2,13 +2,14 @@ from ..settings import *
 from ..pages.main_page import MainPage
 
 
+@allure.title("Проверка наличия ссылки на страницу калькулятора в шапке сайта")
 def test_guest_should_see_calculator_link_in_header(driver):
 
     page = MainPage(driver)
     page.open()
     page.should_be_calculator_link()
 
-
+@allure.title("Проверка работоспособности формы 'Перезвоните мне' в шапке сайта")
 def test_sending_call_me_button_in_header(driver):
 
     page = MainPage(driver)
@@ -17,7 +18,7 @@ def test_sending_call_me_button_in_header(driver):
     page.fill_and_send_header_call_me(last_name = fake.last_name(), phone = fake.phone_number())
     page.should_be_result_of_sending()
 
-
+@allure.title("Проверка работоспособности формы 'Онлайн-заявка' в подвале сайта")
 def test_sending_call_me_button_in_footer(driver):
 
     page = MainPage(driver)
@@ -26,7 +27,7 @@ def test_sending_call_me_button_in_footer(driver):
     page.fill_and_send_footer_call_me(last_name = fake.last_name(), phone = fake.phone_number())
     page.should_be_result_of_sending()
 
-
+@allure.title("Проверка работоспособности формы 'Калькулятор аренды теплохода' на главной странице. Позитив.")
 def test_calculator_form_on_main_page_positive(driver):
 
     page = MainPage(driver)
@@ -35,7 +36,7 @@ def test_calculator_form_on_main_page_positive(driver):
     page.click_submit_calculator_form_on_main_page()
     page.should_be_ship_count_in_calculator_result()
 
-
+@allure.title("Проверка работоспособности формы 'Калькулятор аренды теплохода' на главной странице. Негатив.")
 def test_calculator_form_on_main_page_negative(driver):
 
     page = MainPage(driver)
@@ -44,7 +45,7 @@ def test_calculator_form_on_main_page_negative(driver):
     page.click_submit_calculator_form_on_main_page()
     page.should_be_alert_in_calculator_result()
 
-
+@allure.title("Проверка работоспособности кнопки 'Забронировать' в форме 'Калькулятор аренды теплохода' на главной странице.")
 def test_calculator_form_order_button_on_main_page(driver):
 
     page = MainPage(driver)
@@ -53,7 +54,7 @@ def test_calculator_form_order_button_on_main_page(driver):
     page.fill_and_send_order_form(last_name = fake.last_name(), phone = fake.phone_number())
     page.should_be_result_of_sending()
 
-
+@allure.title("Проверка работоспособности кнопки и формы 'Получить расчет' на главной странице.")
 def test_get_price_estimate_form(driver):
 
     page = MainPage(driver)
@@ -62,7 +63,7 @@ def test_get_price_estimate_form(driver):
     page.fill_and_send_get_price_estimate_form(date = fake.future_date(end_date='+10d'), supply_type = 'Банкет', guests_amount = 5, hours = 5, last_name = fake.last_name(), phone = fake.phone_number(), communication_method= 'Telegram')
     page.should_be_result_of_sending()
 
-
+@allure.title("Проверка работоспособности формы 'Расчёт стоимости мероприятия' на главной странице.")
 def test_cost_calculation_form_on_main_page(driver):
 
     page = MainPage(driver)
@@ -70,7 +71,7 @@ def test_cost_calculation_form_on_main_page(driver):
     page.fill_and_send_cost_calculation_form(date = fake.future_date(end_date='+10d'), supply_type = 'Банкет', guests_amount = 5, hours = 5, last_name = fake.last_name(), phone = fake.phone_number(), communication_method= 'Telegram')
     page.should_be_result_of_sending()
 
-
+@allure.title("Проверка работоспособности формы 'Подбор теплохода' на главной странице.")
 def test_selection_ship_form_on_main_page(driver):
 
     page = MainPage(driver)
