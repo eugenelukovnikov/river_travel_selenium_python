@@ -5,7 +5,7 @@ from ..utils.locators import *
 
 class ShipPage(BasePage): 
     
-     SHIP_PAGE_URL = "https://river-travel.ru/ship/teplohod-bogema/"
+     SHIP_PAGE_URL = "https://river-travel.ru/ship/gnezdo-gluharya/"
 
      def __init__(self, driver, url=SHIP_PAGE_URL):
          super().__init__(driver, url)

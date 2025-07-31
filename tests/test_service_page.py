@@ -38,7 +38,7 @@ def test_calculator_form_order_button_on_service_page(driver):
     page.should_be_result_of_sending()
 
 
-def test_order_form_in_ships_block_on_ship_page(driver):
+def test_order_form_in_ships_block_on_service_page(driver):
 
     page = ServicePage(driver)
     page.open()
